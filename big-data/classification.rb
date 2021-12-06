@@ -18,7 +18,7 @@ training = [
 dec_tree = DecisionTree::ID3Tree.new(attributes, training, 1, :discrete)
 dec_tree.train
 
-test = ['18-35', 'High School', 'Low', 'Single']
+test = ['18-35', 'High School', 'High', 'Single']
 
 decision = dec_tree.predict(test)
 

@@ -4,7 +4,7 @@ require 'decisiontree'
 attributes = ['Temp']
 
 training = [
-  [98.7, 'healthy'],
+  [97.7, 'healthy'],
   [99.1, 'healthy'],
   [99.5, 'sick'],
   [102.5, 'crazy sick'],
@@ -14,9 +14,9 @@ training = [
 dec_tree = DecisionTree::ID3Tree.new(attributes, training, 'sick', :continuous)
 dec_tree.train
 
-test = [108.7, 'dead']
+test = [98.6, 'Healthy']
 
-decision = dec_tree.predict(test)
+decision = dec_tree.predict([98.6])
 
 puts "Prediction #{decision}"
 puts "Reality #{test.last}"
